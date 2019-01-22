@@ -1,14 +1,28 @@
 function play() {
 
-    var topLeft = document.getElementById('topLeft');
-    var topMiddle = document.getElementById('topMiddle');
-    var topRight = document.getElementById('topRight');
-    var middleLeft = document.getElementById('middleLeft');
-    var middleMiddle = document.getElementById('middleMiddle');
-    var middleRight = document.getElementById('middleRight');
-    var bottomLeft = document.getElementById('bottomLeft');
-    var bottomMiddle = document.getElementById('bottomMiddle');
-    var bottomRight = document.getElementById('bottomRight');
+    var topLeft;
+    var topMiddle;
+    var topRight;
+    var middleLeft;
+    var middleMiddle;
+    var middleRight;
+    var bottomLeft;
+    var bottomMiddle;
+    var bottomRight;
+
+    var board = [
+        topLeft = document.getElementById('topLeft'),
+        topMiddle = document.getElementById('topMiddle'),
+        topRight = document.getElementById('topRight'),
+        middleLeft = document.getElementById('middleLeft'),
+        middleMiddle = document.getElementById('middleMiddle'),
+        middleRight = document.getElementById('middleRight'),
+        bottomLeft = document.getElementById('bottomLeft'),
+        bottomMiddle = document.getElementById('bottomMiddle'),
+        bottomRight = document.getElementById('bottomRight'),
+    ];
+
+    console.log(board[0]);
 
     // topLeft.innerHTML = 'X';
 
@@ -18,8 +32,6 @@ function play() {
     playerName.innerHTML = `It is Player ${player}'s turn.`;
 
     var board = document.getElementsByClassName('boardButton');
-
-    console.log(board[0]);
 
     function executePlayerMove() {
 

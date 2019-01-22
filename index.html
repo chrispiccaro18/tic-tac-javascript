@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <h1>Tic-Tac-JavaScript</h1>
+    <header>
+        <h1>Tic-Tac-JavaScript</h1>
+    </header>
+    <table class="board">
+        <tr id="topRow">
+            <td><button onclick="executePlayerMove()" id="topLeft" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove()" id="topMiddle" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove()" id="topRight" class="boardButton"></button></td>
+        </tr>
+        <tr id="middleRow">
+            <td><button onclick="executePlayerMove()" id="middleLeft" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove()" id="middleMiddle" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove()" id="middleRight" class="boardButton"></button></td>
+        </tr>
+        <tr id="bottomRow">
+            <td><button onclick="executePlayerMove()" id="bottomLeft" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove()" id="bottomMiddle" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove()" id="bottomRight" class="boardButton"></button></td>
+        </tr>
+    </table>
+    <p id="playerNameDisplay"></p>
+    <p>
+        <button id="playGame" onclick="play()">Play!</button>
+    </p>
+    <script src="main.js"></script>
 </body>
 </html>

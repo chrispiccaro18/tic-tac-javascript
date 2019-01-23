@@ -1,4 +1,5 @@
 var player = 1;
+let gameOver = false;
 
 var topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight;
 
@@ -14,37 +15,34 @@ var board = [
     bottomRight = document.getElementById('bottomRight'),
 ];
 
-function play() {
+function displayPlayerName() {
     // Display which player's turn it is
     var playerName = document.getElementById('playerNameDisplay');
     playerName.innerHTML = `It is Player ${player}'s turn.`;
 
-    function printMove() {
-        console.log('in print move function');
-    }
-
-    //var move = document.getElementById('topLeft');
-    // move.innerHTML = 'X';
-
-    //move.addEventListener('click', printMove(), false);
-
+    //console.log(board[4].innerHTML);
 }
 
 function executePlayerMove(id) {
     var move = document.getElementById(id);
     if(player === 1) {
         move.innerHTML = 'X';
+        checkforWin(board);
         player = 2;
-        play();
+        //displayPlayerName();
     } else if(player === 2) {
         move.innerHTML = 'O';
+        checkforWin(board);
         player = 1;
-        play();
+        //displayPlayerName();
     }
+}
 
-    console.log(move);
-
-    //var moveTwo = document.getElementById('board');
-    //console.log(moveTwo);
+function checkforWin(b) {
+    if(b[0].innerHTML === 'X' && b[1].innerHTML === 'X' && b[2].innerHTML === 'X') {
+        var playerName = document.getElementById('playerNameDisplay');
+        playerName.innerHTML = `Player ${player} Wins!`;
+    }
+    //console.log(b[0].innerHTML);
 
 }

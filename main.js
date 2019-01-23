@@ -15,20 +15,36 @@ var board = [
 ];
 
 function play() {
-
+    // Display which player's turn it is
     var playerName = document.getElementById('playerNameDisplay');
     playerName.innerHTML = `It is Player ${player}'s turn.`;
 
-    // var board = document.getElementsByClassName('boardButton');
+    function printMove() {
+        console.log('in print move function');
+    }
+
+    //var move = document.getElementById('topLeft');
+    // move.innerHTML = 'X';
+
+    //move.addEventListener('click', printMove(), false);
 
 }
 
-function executePlayerMove(board) {
-    var elMove = document.getElementsByClassName('board');
-    elMove.addEventListener('click', function(e) {
-        document.table.appendChild('X');
-    });
+function executePlayerMove(id) {
+    var move = document.getElementById(id);
+    if(player === 1) {
+        move.innerHTML = 'X';
+        player = 2;
+        play();
+    } else if(player === 2) {
+        move.innerHTML = 'O';
+        player = 1;
+        play();
+    }
 
-    console.log(elMove);
+    console.log(move);
+
+    //var moveTwo = document.getElementById('board');
+    //console.log(moveTwo);
 
 }

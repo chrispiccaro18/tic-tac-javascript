@@ -10,21 +10,21 @@
     <header>
         <h1>Tic-Tac-JavaScript</h1>
     </header>
-    <table class="board">
+    <table id="board">
         <tr id="topRow">
-            <td><button onclick="executePlayerMove(board)" id="topLeft" class="boardButton"></button></td>
-            <td><button onclick="executePlayerMove(board)" id="topMiddle" class="boardButton"></button></td>
-            <td><button onclick="executePlayerMove(board)" id="topRight" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="topLeft" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="topMiddle" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="topRight" class="boardButton"></button></td>
         </tr>
         <tr id="middleRow">
-            <td><button onclick="executePlayerMove(board)" id="middleLeft" class="boardButton"></button></td>
-            <td><button onclick="executePlayerMove(board)" id="middleMiddle" class="boardButton"></button></td>
-            <td><button onclick="executePlayerMove(board)" id="middleRight" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="middleLeft" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="middleMiddle" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="middleRight" class="boardButton"></button></td>
         </tr>
         <tr id="bottomRow">
-            <td><button onclick="executePlayerMove(board)" id="bottomLeft" class="boardButton"></button></td>
-            <td><button onclick="executePlayerMove(board)" id="bottomMiddle" class="boardButton"></button></td>
-            <td><button onclick="executePlayerMove(board)" id="bottomRight" class="boardButton">X</button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="bottomLeft" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="bottomMiddle" class="boardButton"></button></td>
+            <td><button onclick="executePlayerMove(this.id)" id="bottomRight" class="boardButton"></button></td>
         </tr>
     </table>
     <p id="playerNameDisplay"></p>

@@ -8,6 +8,10 @@ p {
     text-align: center;
 }
 
+#playerNameDisplay {
+    height: 1.5em;
+}
+
 h1 {
     background-color: rgb(173, 184, 201);
     text-align: center;

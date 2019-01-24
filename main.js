@@ -1,7 +1,8 @@
-// Game starts with player 1
+// Game starts with player 1, X
 var player = 1;
+var piece = 'X';
 
-// Grabbing the buttons from the table to make the board
+// Grabbing the buttons by id to make the board
 var topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight;
 
 var board = [
@@ -16,14 +17,16 @@ var board = [
     bottomRight = document.getElementById('bottomRight'),
 ];
 
+displayPlayerName();
+
 function displayPlayerName(legalMove) {
     var playerName = document.getElementById('playerNameDisplay');
     if(legalMove === false) {
         // Inform the player of an illegal move and display which player's turn it is
-        playerName.innerHTML = `Please pick an unoccupied space. It is Player ${player}'s turn.`;
+        playerName.innerHTML = `Please pick an unoccupied space! It is still Player ${player}'s turn. ${piece}`;
     } else {
         // Display which player's turn it is
-        playerName.innerHTML = `It is Player ${player}'s turn.`;
+        playerName.innerHTML = `Player ${player}'s turn. ${piece}`;
     }
 }
 
@@ -51,15 +54,17 @@ function executePlayerMove(id) {
                 playerName.innerHTML = `Player ${player} Wins!`;
                 break;
             case 3:
-                playerName.innerHTML = 'Tie!';
+                playerName.innerHTML = 'Tie! Cat\'s Game.';
                 break;
             default:
-                // If no winner or cat's game yet, switch player and display whose turn it is
+                // If no winner or cat's game yet, switch player and display whose turn it is.
                 if(player === 1) {
                     player = 2;
+                    piece = 'O';
                     displayPlayerName();
                 } else {
                     player = 1;
+                    piece = 'X';
                     displayPlayerName();
                 }
                 break;
@@ -90,3 +95,17 @@ function checkforWin(b) {
         }
     }
 }
+
+// Below is a way to add a clickable link that will close after clicked. I can't get it to go where I want yet.
+// var play = '<p class="header"><a id="close" href="#">Play</a></p>';
+// var elPlay = document.createElement('p');
+// elPlay.setAttribute('id', 'play');
+// elPlay.innerHTML = play;
+// document.body.appendChild(elPlay);
+
+// function dismissPlay() {
+//     document.body.removeChild(elPlay);
+// }
+
+// var elClose = document.getElementById('play');
+// elClose.addEventListener('click', dismissPlay, false);

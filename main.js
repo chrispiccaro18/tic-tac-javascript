@@ -49,9 +49,11 @@ function executePlayerMove(id) {
         switch(checkforWin(board)) {
             case 1:
                 playerName.innerHTML = `Player ${player} Wins!`;
+                clearBoard(board);
                 break;
             case 2:
                 playerName.innerHTML = `Player ${player} Wins!`;
+                clearBoard(board);
                 break;
             case 3:
                 playerName.innerHTML = 'Tie! Cat\'s Game.';
@@ -96,16 +98,26 @@ function checkforWin(b) {
     }
 }
 
-// Below is a way to add a clickable link that will close after clicked. I can't get it to go where I want yet.
-// var play = '<p class="header"><a id="close" href="#">Play</a></p>';
-// var elPlay = document.createElement('p');
-// elPlay.setAttribute('id', 'play');
-// elPlay.innerHTML = play;
-// document.body.appendChild(elPlay);
+function clearBoard(b) {
+    for(let i = 0; i < b.length; i++) {
+        b[i].innerHTML = '';
+    }
+    playAgain();
+}
 
-// function dismissPlay() {
-//     document.body.removeChild(elPlay);
-// }
+function playAgain() {
+    // Below is a way to add a clickable link that will close after clicked. I can't get it to go where I want yet.
+    var play = '<button class="header"><a id="close" href="#">Play Again</a></button>';
+    var elPlay = document.createElement('p');
+    elPlay.setAttribute('id', 'play');
+    elPlay.innerHTML = play;
+    document.body.appendChild(elPlay);
 
-// var elClose = document.getElementById('play');
-// elClose.addEventListener('click', dismissPlay, false);
+    function dismissPlay() {
+        document.body.removeChild(elPlay);
+        displayPlayerName();
+    }
+
+    var elClose = document.getElementById('play');
+    elClose.addEventListener('click', dismissPlay, false);
+}
